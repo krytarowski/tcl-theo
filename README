@@ -1,0 +1,40 @@
+theo - theo.c implementation for Tcl
+
+This package provides quotes from OpenBSD's src/usr.bin/mg/theo.c.  The
+quotes were originally spoken by Theo de Raadt, the OpenBSD project
+founder.
+
+The inferface of theo consists of a single tcl command named theo.
+Because there is only this one command, the interface is not placed in a
+separate namespace.
+
+The *theo* command does not take any arguments and returns a random
+string with a quote.
+
+To make type:
+
+      autoreconf -fi
+      ./configure
+      make
+      make install
+
+The configure script will deduce $PREFIX from the tcl installation.
+The generated Makefile uses the file $PREFIX/lib/tclConfig.sh that was left by
+the make of tcl for most of its configuration parameters.
+
+The Makefile generates pkgIndex.tcl files that are compatible with
+tcl8.5 and newer.
+
+Usage:
+
+      # load the extension
+      package require theo
+
+      # return a quote and print it to the standard output
+      puts [theo]
+
+
+
+Written by:  Kamil Rytarowski (kamil@NetBSD.org)
+
+License: BSD-2-clause.
